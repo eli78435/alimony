@@ -5,11 +5,13 @@ import { CommonModule } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { AlimonyCalculatorComponent } from 'src/alimony-calculator/alimony-calculator.component';
+import { NumbersOnlyDirective } from './numbers-only.directive';
 
 @NgModule({
    declarations: [
       AppComponent,
-      AlimonyCalculatorComponent
+      AlimonyCalculatorComponent,
+      NumbersOnlyDirective
    ],
    imports: [
       BrowserModule,

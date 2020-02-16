@@ -1,67 +1,79 @@
 <h1>מחשבון לחישוב אומדן דמי מזונות</h1>
 
-<table class="calctable">
-  <tbody>
-    <tr>
-      <td>
-        <p>הכנסתו הפנויה של האב
-          <img src="../assets/images/info.png" alt="Smiley face" align="middle">
-        </p>
-      </td>
-      <td>
-        <input maxlength="6" [(ngModel)]="dadSalary">
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>הכנסתה החודשית של האם
-          <img src="../assets/images/info.png" alt="Smiley face" align="middle">
-        </p>
-      </td>
-      <td>
-        <input maxlength="6" [(ngModel)]="momSalary">
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>צרכיו ההכרחיים של הילד ללא מדור
-          <img src="../assets/images/info.png" alt="Smiley face" align="middle">
-        </p>
-      </td>
-      <td>
-        <input maxlength="6" [(ngModel)]="childSpecialNeedNoCompartment">
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>עלות מדור בסיסי לילד
-          <img src="../assets/images/info.png" alt="Smiley face" align="middle">
-        </p>
-      </td>
-      <td>
-        <input maxlength="6" [(ngModel)]="childCompartment">
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>צרכיו הלא הכרחיים של הילד
-          <img src="../assets/images/info.png" alt="Smiley face" align="middle">
-        </p>
-      </td>
-      <td>
-        <input maxlength="6" [(ngModel)]="childOptionalNeeds">
-      </td>
-    </tr>
-  </tbody>
-  <tfoot>
-    <tr>
-      <td>
-        <button (click)="calculateAlimony()">חישוב</button>
-        <button (click)="clean()">נקה</button>
-      </td>
-      <td>
-        <p *ngIf='0 < calcedAlimony'>{{ calcedAlimony }}</p>  
-      </td>
-    </tr>
-  </tfoot>
-</table>
+<!-- <form> -->
+  <table class="calctable">
+    <tbody>
+      <tr>
+        <td>
+          <p>הכנסתו הפנויה של האב
+            <img src="../assets/images/info.png" alt="Smiley face" align="middle"
+              title="הכנסתו הפנויה של האב – משכורת נטו בניכוי עלות מדורו של האב והוצאות מדור אלו, בניכוי מלוא הוצאות צרכיו הכרחיים של הילד ומחצית מעלות מדורו הבסיסי וההוצאות המשולמת לידי האם לזמן שבו הילד שוהה אצלה">
+          </p>
+        </td>
+        <td>
+          <input name="dadSalaryInput"  maxlength="6" [(ngModel)]="dadSalary" 
+            min="1" numbersOnly ngModel required>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>הכנסתה החודשית של האם
+            <img src="../assets/images/info.png" alt="Smiley face" align="middle"
+              title="הכנסתה החודשית של האם – בניכוי הוצאות מדורה">
+          </p>
+        </td>
+        <td>
+          <input name="momSalaryInput" maxlength="6" [(ngModel)]="momSalary" numbersOnly
+            min="1" numbersOnly ngModel required>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>צרכיו ההכרחיים של הילד ללא מדור
+            <img src="../assets/images/info.png" alt="Smiley face" align="middle"
+              title="צרכיו ההכרחיים של הילד (לא כולל מדור והוצאות מדור) (סכום קבוע של 1,300-1,400 ₪ לא כנגזרת של הוצאות בפועל, אלא כקביעה משפטית)">
+          </p>
+        </td>
+        <td>
+          <input name="childSpecialNeedNoCompartmentInput" maxlength="6" [(ngModel)]="childSpecialNeedNoCompartment"
+            numbersOnly ngModel required>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>עלות מדור בסיסי לילד
+            <img src="../assets/images/info.png" alt="Smiley face" align="middle"
+              title="עלות מדור בסיסי לילד והוצאות המדור עבורו. נתון תיאורטי מכיוון שהילד איננו גר לבד ולכן לדיירים נוספים משמעות במספר זה">
+          </p>
+        </td>
+        <td>
+          <input name="childCompartmentInput" maxlength="6" [(ngModel)]="childCompartment"
+            numbersOnly ngModel required>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>צרכיו הלא הכרחיים של הילד
+            <img src="../assets/images/info.png" alt="Smiley face" align="middle"
+              title="צרכיו הלא הכרחיים של הילד. נתון זה יקבע בהתאם ליכולת של ההורים. במידה ואין יכולת להורים לחיות כראוי, סכום זה יכול להיקבע כאפס">
+          </p>
+        </td>
+        <td>
+          <input name="childOptionalNeedsInput" maxlength="6" [(ngModel)]="childOptionalNeeds"
+            numbersOnly ngModel required>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>
+          <button type="submit" (click)="calculateAlimony()">חישוב</button>
+          <button (click)="clean()">נקה</button>
+        </td>
+        <td>
+          <p *ngIf='0 < calcedAlimony'>{{ calcedAlimony }}</p>  
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+<!-- </form> -->
