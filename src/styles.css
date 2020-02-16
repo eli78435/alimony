@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    font-family: 'Open Sans Hebrew' !important;
+    font-style: normal;
+    font-weight: normal;
+    font-weight: 100;
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 60px;
+    background-color: #fff;
+}

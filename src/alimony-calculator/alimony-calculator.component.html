@@ -1,0 +1,67 @@
+<h1>מחשבון לחישוב אומדן דמי מזונות</h1>
+
+<table class="calctable">
+  <tbody>
+    <tr>
+      <td>
+        <p>הכנסתו הפנויה של האב
+          <img src="../assets/images/info.png" alt="Smiley face" align="middle">
+        </p>
+      </td>
+      <td>
+        <input maxlength="6" [(ngModel)]="dadSalary">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>הכנסתה החודשית של האם
+          <img src="../assets/images/info.png" alt="Smiley face" align="middle">
+        </p>
+      </td>
+      <td>
+        <input maxlength="6" [(ngModel)]="momSalary">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>צרכיו ההכרחיים של הילד ללא מדור
+          <img src="../assets/images/info.png" alt="Smiley face" align="middle">
+        </p>
+      </td>
+      <td>
+        <input maxlength="6" [(ngModel)]="childSpecialNeedNoCompartment">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>עלות מדור בסיסי לילד
+          <img src="../assets/images/info.png" alt="Smiley face" align="middle">
+        </p>
+      </td>
+      <td>
+        <input maxlength="6" [(ngModel)]="childCompartment">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>צרכיו הלא הכרחיים של הילד
+          <img src="../assets/images/info.png" alt="Smiley face" align="middle">
+        </p>
+      </td>
+      <td>
+        <input maxlength="6" [(ngModel)]="childOptionalNeeds">
+      </td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>
+        <button (click)="calculateAlimony()">חישוב</button>
+        <button (click)="clean()">נקה</button>
+      </td>
+      <td>
+        <p *ngIf='0 < calcedAlimony'>{{ calcedAlimony }}</p>  
+      </td>
+    </tr>
+  </tfoot>
+</table>
