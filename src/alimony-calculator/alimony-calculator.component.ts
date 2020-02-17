@@ -6,12 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./alimony-calculator.component.css']
 })
 export class AlimonyCalculatorComponent implements OnInit {
-  private dadSalary: number = 15000;
-  private momSalary: number = 1000;
-  private childSpecialNeedNoCompartment: number = 1300;
-  private childCompartment: number = 0;
-  private childOptionalNeeds: number = 0;
-  private calcedAlimony?: number = null;
+  dadSalary: number = 15000;
+  momSalary: number = 1000;
+  childSpecialNeedNoCompartment: number = 1300;
+  childCompartment: number = 0;
+  childOptionalNeeds: number = 0;
+  calcedAlimony?: number = null;
 
   constructor() { }
 
